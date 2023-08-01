@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: joseortegatokiotagsd 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: joseortegatokiotagsd
+  template:
+    metadata:
+      labels:
+        app: joseortegatokiotagsd 
+    spec:
+      containers:
+        - name: joseortegatokiotagsd 
+          image: crgsd.azurecr.io/joseortegatokiotagsd
+          ports:
+          - containerPort: 8080
